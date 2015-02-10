@@ -1,6 +1,6 @@
 {
   "name": "text-height",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Measure the text height in browsers",
   "main": "index.js",
   "scripts": {
