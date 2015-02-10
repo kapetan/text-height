@@ -3,6 +3,8 @@ var unit = require('parse-unit');
 var extend = require('xtend');
 var textWidth = require('text-width');
 
+var CLEAR_PADDING = 5;
+
 var supported = function() {
 	if(!textWidth.supported) return false;
 
@@ -62,7 +64,7 @@ var initialize = function() {
 	var context = canvas.getContext('2d');
 
 	context.textBaseline = 'baseline';
-	context.fillStyle = 'rgb(0, 0, 0, 1)';
+	context.fillStyle = 'rgba(0, 0, 0, 1)';
 
 	var height = function(text, options) {
 		if(!options && typeof text === 'object') {
@@ -104,7 +106,8 @@ var initialize = function() {
 		}
 
 		ascent = size - ascent;
-		context.clearRect(0, 0, width * 2, size);
+		context.clearRect(0, 0, width * 2 + CLEAR_PADDING,
+			size + descent + CLEAR_PADDING);
 
 		return {
 			ascent: ascent,
