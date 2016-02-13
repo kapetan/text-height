@@ -82,7 +82,7 @@ var initialize = function() {
 
 		var width = textWidth(text, options);
 
-		if(!width || !size) return empty(size);
+		if(!width || !size) return empty(size);
 
 		context.fillText(text, 0, size);
 		context.fillText(text, width, 0);
